@@ -1,13 +1,13 @@
-import { NextFunction, Request, Response } from 'express';
-const express = require('express');
-const createError = require('http-errors');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const helmet = require('helmet');
+import { type NextFunction, type Request, type Response } from 'express';
+import express = require('express');
+import createError = require('http-errors');
+import cookieParser = require('cookie-parser');
+import logger = require('morgan');
+import helmet = require('helmet');
+import indexRouter from './routes/index';
 
-const indexRouter = require('./routes/index');
 
-const errorHandler = require('./middleware/errorHandler');
+import errorHandler from './middleware/errorHandler';
 
 const app = express();
 

@@ -1,6 +1,6 @@
-import { Request, Response } from 'express';
+import { type Request, type Response } from 'express';
 
-const express = require('express');
+import express = require('express');
 
 const router = express.Router();
 
@@ -8,4 +8,4 @@ router.get('/', (req:Request, res:Response) => {
   res.send({ message: 'Hello world' });
 });
 
-module.exports = router;
+export default router;

@@ -1,17 +1,15 @@
-import { Request, Response } from 'express';
+import { type Request, type Response } from 'express';
 
-const createError = require('http-errors');
+import createError = require('http-errors');
 
-// eslint-disable-next-line no-unused-vars
-const errorHandler = (err:any, req:Request, res:Response) => {
-  // eslint-disable-next-line no-console
+const errorHandler = (err: any, req: Request, res: Response): void => {
   console.error(err);
   // if the error is safe to expose to client
-  if (err.expose === true) {
-    res.status(err.status || 500).send(err);
+  if (err.expose !== null && err.expose !== undefined) {
+    res.status(err.status ?? 500).send(err);
   } else {
     res.status(500).send(createError.InternalServerError());
   }
 };
 
-module.exports = errorHandler;
+export default errorHandler;

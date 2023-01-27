@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "allowJs": true
+  },
+  "files": [
+    ".eslintrc.js",
+    "helmet.d.ts"
+  ],
+  "include": ["src/**/*"]
+}
