@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=production ts-node ./src/bin/www",
-    "dev": "NODE_ENV=development nodemon ./src/bin/www",
+    "dev": "NODE_ENV=development nodemon --exec ts-node ./src/bin/www",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "lint": "eslint .",
