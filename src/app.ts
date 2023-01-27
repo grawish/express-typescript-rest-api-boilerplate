@@ -1,3 +1,4 @@
+import { NextFunction, Request, Response } from 'express';
 const express = require('express');
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
@@ -19,7 +20,7 @@ app.use(cookieParser());
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
-app.use((req, res, next) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
   next(createError.NotFound());
 });
 

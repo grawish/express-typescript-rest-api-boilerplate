@@ -1,7 +1,9 @@
+import { Request, Response } from 'express';
+
 const createError = require('http-errors');
 
 // eslint-disable-next-line no-unused-vars
-const errorHandler = (err, req, res, next) => {
+const errorHandler = (err:any, req:Request, res:Response) => {
   // eslint-disable-next-line no-console
   console.error(err);
   // if the error is safe to expose to client
